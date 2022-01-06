@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap");
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  background-color: #fffbf9;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.banner {
+  width: 100%;
+  height: 700px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/desktop/image-header.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+.banner .banner_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+.banner .banner_header .banner_header_nav {
+  width: 35%;
+}
+.banner .banner_header .banner_header_nav .banner_header_nav_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.banner .banner_header .banner_header_nav .banner_header_nav_list .banner_header_nav_list_el :hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.banner .banner_header .banner_header_nav .banner_header_nav_list .banner_header_nav_list_el button {
+  padding: 15px 15px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  color: white;
+}
+.banner .banner_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.banner .banner_content .banner_content_slogan {
+  font-size: 3rem;
+  font-family: "Fraunces", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  margin: 40px;
+}
+.banner .banner_content .banner_content_arrow {
+  margin-top: 20px;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+}
+.offer .offer_el {
+  display: flex;
+  justify-content: row;
+}
+.offer .offer_el .offer_el_info {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 140px;
+}
+.offer .offer_el .offer_el_info .offer_el_info_header {
+  font-size: 2.4rem;
+  font-weight: 900;
+  font-family: "Fraunces", sans-serif;
+  padding: 20px 0;
+}
+.offer .offer_el .offer_el_info .offer_el_info_text {
+  font-weight: 400;
+  font-family: "Barlow", sans-serif;
+  padding: 20px 0;
+  line-height: 1.5;
+}
+.offer .offer_el .offer_el_info .offer_el_info_btn {
+  border: none;
+  background: none;
+  font-weight: 900;
+  font-family: "Fraunces", sans-serif;
+  font-size: 1.1rem;
+  padding: 20px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.offer .offer_el .offer_el_info .offer_el_info_btn div {
+  display: inline-block;
+  width: 115%;
+  height: 10px;
+  border-radius: 5px;
+  position: relative;
+  left: -10px;
+  top: -7px;
+}
+.offer .offer_el .offer_el_info .offer_el_info_btn div.underline_yellow {
+  background-color: rgba(250, 212, 0, 0.2);
+}
+.offer .offer_el .offer_el_info .offer_el_info_btn div.underline_red {
+  background-color: rgba(254, 120, 103, 0.2);
+}
+.offer .offer_el .offer_el_info .offer_el_info_btn:hover {
+  cursor: pointer;
+}
+.offer .offer_el .offer_el_info .offer_el_info_btn:hover div.underline_yellow {
+  background-color: #fad400;
+  z-index: -1;
+}
+.offer .offer_el .offer_el_info .offer_el_info_btn:hover div.underline_red {
+  background-color: #fe7867;
+  z-index: -1;
+}
+.offer .offer_el .offer_el_picture {
+  width: 50%;
+  height: auto;
+}
+.offer .offer_el .offer_el_picture img {
+  width: 100%;
+  height: 100%;
+}
+
+.benefits {
+  display: flex;
+}
+.benefits .benefits_el {
+  position: relative;
+}
+.benefits .benefits_el img {
+  width: 100%;
+}
+.benefits .benefits_el_first, .benefits .benefits_el_second {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 0 170px;
+  background-size: contain;
+  position: absolute;
+  z-index: 1;
+  top: 60%;
+}
+.benefits .benefits_el_first .benefits_el_header, .benefits .benefits_el_second .benefits_el_header {
+  font-weight: 900;
+  font-family: "Fraunces", sans-serif;
+  font-size: 2rem;
+}
+.benefits .benefits_el_first .benefits_el_text, .benefits .benefits_el_second .benefits_el_text {
+  text-align: center;
+  font-weight: 400;
+  font-family: "Barlow", sans-serif;
+  padding: 30px 0 60px 0;
+  line-height: 1.5;
+}
+.benefits .benefits_el_first {
+  color: #25564b;
+}
+.benefits .benefits_el_second {
+  color: #19536b;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 0;
+}
+.testimonials .testimonials_header {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  font-family: "Fraunces", sans-serif;
+  font-weight: 900;
+  padding-bottom: 100px;
+  color: #a7abae;
+}
+.testimonials .container_el {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 100px;
+}
+.testimonials .container_el .testimonials_el {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonials .container_el .testimonials_el .testimonials_el_pic {
+  border-radius: 50%;
+  width: 80px;
+  height: auto;
+}
+.testimonials .container_el .testimonials_el .testimonials_el_text {
+  text-align: center;
+  font-weight: 600;
+  font-family: "Barlow", sans-serif;
+  padding: 60px 40px;
+  line-height: 1.5;
+  color: #23303e;
+}
+.testimonials .container_el .testimonials_el .testimonials_el_name {
+  font-weight: 900;
+  font-family: "Fraunces", sans-serif;
+  color: #23303e;
+}
+.testimonials .container_el .testimonials_el .testimonials_el_position {
+  font-size: 0.9rem;
+  padding: 15px;
+  color: #a7abae;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.gallery .gallery_el {
+  width: 25%;
+  height: auto;
+}
+
+.footer {
+  background-color: #90d4c5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 0 10px 0;
+}
+.footer .footer_nav {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+  padding-bottom: 70px;
+  width: 300px;
+  color: #25564b;
+}
+.footer .footer_nav .footer_nav_el:hover {
+  cursor: pointer;
+  color: white;
+}
+.footer .footer_sm {
+  display: flex;
+  justify-content: space-around;
+  width: 175px;
+  padding-bottom: 50px;
+}
+.footer .footer_sm svg:hover {
+  cursor: pointer;
+}
+.footer .footer_sm svg:hover path {
+  fill: white;
+}
+
+/*# sourceMappingURL=main.css.map */

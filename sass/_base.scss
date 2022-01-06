@@ -1,0 +1,36 @@
+
+$colors-primary: (
+    'red': hsl(7, 99%, 70%), //Soft red
+    'yellow': hsl(51, 100%, 49%), //Yellow
+    'text-graphic': hsl(167, 40%, 24%), //Dark desaturated cyan 
+    'text-photography': hsl(198, 62%, 26%), //Dark blue 
+    'footer': hsl(168, 34%, 41%), //Dark moderate cyan
+    
+    'background': #fffbf9
+);
+
+
+$colors-neutral: (
+    'Very dark desaturated blue': hsl(212, 27%, 19%),
+    'Very dark grayish blue': hsl(213, 9%, 39%),
+    'Dark grayish blue': hsl(232, 10%, 55%),
+    'Grayish blue': hsl(210, 4%, 67%),
+    'White': hsl(0, 0%, 100%)
+);
+
+$desktop-width: 1440px;
+$mobile-width: 375px;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap');
+
+$copy: (
+    'font-main':'Barlow',
+    'font-other': 'Fraunces',
+    'small': 400,
+    'medium': 600,
+    'bolder': 700,
+    'bold': 900,
+    'size': 18px 
+)
+
