@@ -58,7 +58,7 @@ body {
 }
 
 .container {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -67,29 +67,39 @@ body {
 
 .banner {
   width: 100%;
-  height: 700px;
   color: white;
   display: flex;
   flex-direction: column;
+  height: 700px;
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
-  background-position: bottom;
+  background-position: bottom center;
+}
+@media (max-width: 999px) {
+  .banner {
+    height: 700px;
+  }
 }
 .banner .banner_header {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px;
 }
 .banner .banner_header .banner_header_nav {
-  width: 35%;
+  max-width: 35%;
+}
+@media (max-width: 999px) {
+  .banner .banner_header .banner_header_nav {
+    display: none;
+  }
 }
 .banner .banner_header .banner_header_nav .banner_header_nav_list {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  max-width: 100%;
 }
 .banner .banner_header .banner_header_nav .banner_header_nav_list .banner_header_nav_list_el :hover {
   background: rgba(255, 255, 255, 0.3);
@@ -98,13 +108,23 @@ body {
   cursor: pointer;
 }
 .banner .banner_header .banner_header_nav .banner_header_nav_list .banner_header_nav_list_el button {
-  padding: 15px 15px;
+  height: 40px;
+  max-width: 200px;
+  width: auto;
   border: none;
   background: none;
   font-size: 18px;
   font-family: "Barlow", sans-serif;
   font-weight: 400;
   color: white;
+}
+.banner .banner_header .banner_header_hamburger {
+  display: none;
+}
+@media (max-width: 999px) {
+  .banner .banner_header .banner_header_hamburger {
+    display: inline-block;
+  }
 }
 .banner .banner_content {
   display: flex;
@@ -119,6 +139,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 15px;
   margin: 40px;
+  text-align: center;
+}
+@media (max-width: 999px) {
+  .banner .banner_content .banner_content_slogan {
+    font-size: 2rem;
+    letter-spacing: 10px;
+  }
 }
 .banner .banner_content .banner_content_arrow {
   margin-top: 20px;
@@ -126,34 +153,62 @@ body {
 
 .offer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
 }
-.offer .offer_el {
-  display: flex;
-  justify-content: row;
+@media (max-width: 999px) {
+  .offer {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 }
-.offer .offer_el .offer_el_info {
+.offer .offer_el_info {
   width: 50%;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding: 0 140px;
+  align-items: center;
+  padding: 0 40px;
 }
-.offer .offer_el .offer_el_info .offer_el_info_header {
+@media (max-width: 999px) {
+  .offer .offer_el_info {
+    width: 100%;
+    min-height: 500px;
+    text-align: center;
+    align-items: center;
+  }
+}
+.offer .offer_el_info .offer_el_info_header {
   font-size: 2.4rem;
   font-weight: 900;
   font-family: "Fraunces", sans-serif;
   padding: 20px 0;
+  max-width: 350px;
 }
-.offer .offer_el .offer_el_info .offer_el_info_text {
+@media (max-width: 999px) {
+  .offer .offer_el_info .offer_el_info_header {
+    font-size: 2rem;
+  }
+}
+.offer .offer_el_info .offer_el_info_text {
   font-weight: 400;
   font-family: "Barlow", sans-serif;
   padding: 20px 0;
   line-height: 1.5;
+  max-width: 350px;
 }
-.offer .offer_el .offer_el_info .offer_el_info_btn {
+.offer .offer_el_info .offer_el_info_btn_container {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+}
+@media (max-width: 999px) {
+  .offer .offer_el_info .offer_el_info_btn_container {
+    justify-content: center;
+  }
+}
+.offer .offer_el_info .offer_el_info_btn_container .offer_el_info_btn {
   border: none;
   background: none;
   font-weight: 900;
@@ -164,7 +219,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-.offer .offer_el .offer_el_info .offer_el_info_btn div {
+.offer .offer_el_info .offer_el_info_btn_container .offer_el_info_btn div {
   display: inline-block;
   width: 115%;
   height: 10px;
@@ -173,69 +228,106 @@ body {
   left: -10px;
   top: -7px;
 }
-.offer .offer_el .offer_el_info .offer_el_info_btn div.underline_yellow {
+.offer .offer_el_info .offer_el_info_btn_container .offer_el_info_btn div.underline_yellow {
   background-color: rgba(250, 212, 0, 0.2);
 }
-.offer .offer_el .offer_el_info .offer_el_info_btn div.underline_red {
+.offer .offer_el_info .offer_el_info_btn_container .offer_el_info_btn div.underline_red {
   background-color: rgba(254, 120, 103, 0.2);
 }
-.offer .offer_el .offer_el_info .offer_el_info_btn:hover {
+.offer .offer_el_info .offer_el_info_btn_container .offer_el_info_btn:hover {
   cursor: pointer;
 }
-.offer .offer_el .offer_el_info .offer_el_info_btn:hover div.underline_yellow {
+.offer .offer_el_info .offer_el_info_btn_container .offer_el_info_btn:hover div.underline_yellow {
   background-color: #fad400;
   z-index: -1;
 }
-.offer .offer_el .offer_el_info .offer_el_info_btn:hover div.underline_red {
+.offer .offer_el_info .offer_el_info_btn_container .offer_el_info_btn:hover div.underline_red {
   background-color: #fe7867;
   z-index: -1;
 }
-.offer .offer_el .offer_el_picture {
+.offer .offer_el_picture {
   width: 50%;
   height: auto;
 }
-.offer .offer_el .offer_el_picture img {
+@media (max-width: 999px) {
+  .offer .offer_el_picture {
+    width: 100%;
+  }
+}
+.offer .offer_el_picture img {
   width: 100%;
   height: 100%;
+}
+.offer .pic_standout {
+  order: 1;
+}
+@media (max-width: 999px) {
+  .offer .pic_standout {
+    order: 0;
+  }
 }
 
 .benefits {
   display: flex;
+  width: 100%;
+}
+@media (max-width: 999px) {
+  .benefits {
+    flex-direction: column;
+  }
 }
 .benefits .benefits_el {
+  width: 50%;
   position: relative;
+}
+@media (max-width: 999px) {
+  .benefits .benefits_el {
+    width: 100%;
+  }
 }
 .benefits .benefits_el img {
   width: 100%;
 }
-.benefits .benefits_el_first, .benefits .benefits_el_second {
+.benefits .benefits_el .benefits_el_first, .benefits .benefits_el .benefits_el_second {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding: 0 170px;
-  background-size: contain;
+  padding: 0 50px;
   position: absolute;
   z-index: 1;
   top: 60%;
 }
-.benefits .benefits_el_first .benefits_el_header, .benefits .benefits_el_second .benefits_el_header {
+.benefits .benefits_el .benefits_el_first .benefits_el_header, .benefits .benefits_el .benefits_el_second .benefits_el_header {
   font-weight: 900;
   font-family: "Fraunces", sans-serif;
   font-size: 2rem;
 }
-.benefits .benefits_el_first .benefits_el_text, .benefits .benefits_el_second .benefits_el_text {
+@media (max-width: 999px) {
+  .benefits .benefits_el .benefits_el_first .benefits_el_header, .benefits .benefits_el .benefits_el_second .benefits_el_header {
+    font-size: 1.5rem;
+  }
+}
+.benefits .benefits_el .benefits_el_first .benefits_el_text, .benefits .benefits_el .benefits_el_second .benefits_el_text {
   text-align: center;
   font-weight: 400;
   font-family: "Barlow", sans-serif;
   padding: 30px 0 60px 0;
   line-height: 1.5;
+  width: 95%;
+  max-width: 400px;
 }
-.benefits .benefits_el_first {
+@media (max-width: 999px) {
+  .benefits .benefits_el .benefits_el_first .benefits_el_text, .benefits .benefits_el .benefits_el_second .benefits_el_text {
+    font-size: 0.8rem;
+    padding: 14px 0 60px 0;
+  }
+}
+.benefits .benefits_el .benefits_el_first {
   color: #25564b;
 }
-.benefits .benefits_el_second {
+.benefits .benefits_el .benefits_el_second {
   color: #19536b;
 }
 
@@ -245,6 +337,11 @@ body {
   align-items: center;
   padding: 150px 0;
 }
+@media (max-width: 999px) {
+  .testimonials {
+    padding: 50px 0;
+  }
+}
 .testimonials .testimonials_header {
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -253,6 +350,13 @@ body {
   font-weight: 900;
   padding-bottom: 100px;
   color: #a7abae;
+  text-align: center;
+}
+@media (max-width: 999px) {
+  .testimonials .testimonials_header {
+    padding-bottom: 50px;
+    font-size: 1.2rem;
+  }
 }
 .testimonials .container_el {
   display: flex;
@@ -260,10 +364,21 @@ body {
   justify-content: center;
   padding: 0 100px;
 }
+@media (max-width: 999px) {
+  .testimonials .container_el {
+    flex-direction: column;
+    padding: 0 50px;
+  }
+}
 .testimonials .container_el .testimonials_el {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 999px) {
+  .testimonials .container_el .testimonials_el {
+    padding-bottom: 30px;
+  }
 }
 .testimonials .container_el .testimonials_el .testimonials_el_pic {
   border-radius: 50%;
@@ -294,9 +409,19 @@ body {
   flex-wrap: nowrap;
   width: 100%;
 }
+@media (max-width: 999px) {
+  .gallery {
+    flex-wrap: wrap;
+  }
+}
 .gallery .gallery_el {
-  width: 25%;
+  max-width: 25%;
   height: auto;
+}
+@media (max-width: 999px) {
+  .gallery .gallery_el {
+    max-width: 50%;
+  }
 }
 
 .footer {

@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    width: 100%;
+    max-width: 100%;
     // max-width: $desktop-width;
     display: flex;
     flex-direction: column;
@@ -26,30 +26,34 @@ body {
 
 .banner {
     width: 100%;
-    height: 700px;
     color: white;
-   
     display: flex;
     flex-direction: column;
-
+    height: 700px;
     background-image: url('../images/desktop/image-header.jpg');
     background-size: cover;
-    background-position: bottom;
+    background-position: bottom center;
+
+    @media (max-width: 999px) {
+        height: 700px;
+    }
 
     .banner_header {
-        width: 100%;
+        max-width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 40px;
-        // .banner_header_logo {}
         .banner_header_nav {
-            width: 35%;
+            max-width: 35%;
+            @media (max-width: 999px) {
+                display: none;
+            }
             .banner_header_nav_list {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                width: 100%;
+                max-width: 100%;
                 .banner_header_nav_list_el {
                     :hover {
                         background: rgba(255, 255, 255, 0.3);
@@ -57,8 +61,10 @@ body {
                         text-transform: uppercase;
                         cursor: pointer;
                     }
-                    button {
-                        padding: 15px 15px;
+                    button {                       
+                        height: 40px;
+                        max-width: 200px; 
+                        width: auto;
                         border: none;
                         background: none;
                         font-size: map.get($copy, 'size');
@@ -69,9 +75,13 @@ body {
                     }
                 }
             }
-
         }
-        
+        .banner_header_hamburger {
+            display: none;
+            @media (max-width: 999px) {
+                display: inline-block;
+            }
+        }
     }
 
     .banner_content {
@@ -86,6 +96,11 @@ body {
             text-transform: uppercase;
             letter-spacing: 15px;
             margin: 40px;
+            text-align: center;
+            @media (max-width: 999px) {
+                font-size: 2rem;
+                letter-spacing: 10px;
+            }
         }
         .banner_content_arrow {
             margin-top: 20px;
@@ -96,31 +111,51 @@ body {
 
 .offer {
     display: flex;
-    flex-direction: column;
-    .offer_el {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    @media (max-width: 999px) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .offer_el_info {
+        width: 50%;
+        height: auto;
         display: flex;
-        justify-content: row;
-        .offer_el_info {
-            width: 50%;
-            height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        padding: 0 40px;
+        @media (max-width: 999px) {
+            width: 100%;
+            min-height: 500px;
+            text-align: center;
+            align-items: center;
+        }
+        .offer_el_info_header {
+            font-size: 2.4rem;
+            font-weight: map.get($copy, 'bold');
+            font-family: map.get($copy, 'font-other'), sans-serif;
+            padding:20px 0;
+            max-width: 350px;
+            @media (max-width: 999px) {
+                font-size: 2rem;
+            }
+        }   
+        .offer_el_info_text {
+            font-weight: map.get($copy, 'small');
+            font-family: map.get($copy, 'font-main'), sans-serif;
+            padding:20px 0;
+            line-height: 1.5;
+            max-width: 350px;
+        }   
+        .offer_el_info_btn_container {
+            width: 100%;
+            max-width: 350px; 
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start; 
-            padding: 0 140px;
-            .offer_el_info_header {
-                font-size: 2.4rem;
-                font-weight: map.get($copy, 'bold');
-                font-family: map.get($copy, 'font-other'), sans-serif;
-                padding:20px 0;
-            }   
-            .offer_el_info_text {
-                font-weight: map.get($copy, 'small');
-                font-family: map.get($copy, 'font-main'), sans-serif;
-                padding:20px 0;
-                line-height: 1.5;
-
-            }   
+            @media (max-width: 999px) {
+                justify-content: center;
+            }
+        
             .offer_el_info_btn {
                 border: none;
                 background: none;
@@ -129,7 +164,6 @@ body {
                 font-size: 1.1rem;
                 padding:20px 0;
                 position: relative;
-
                 display: flex;
                 flex-direction: column;
                 div {
@@ -149,67 +183,93 @@ body {
                 }
             }
             .offer_el_info_btn:hover {
-                cursor: pointer;
-                div.underline_yellow {
-                    background-color: rgba(250, 212, 0, 1);
-                    z-index: -1;
-                }
-                div.underline_red {
-                    background-color: rgba(254, 120, 103, 1); 
-                    z-index: -1;
-                }
+            cursor: pointer;
+            div.underline_yellow {
+                background-color: rgba(250, 212, 0, 1);
+                z-index: -1;
+            }
+            div.underline_red {
+                background-color: rgba(254, 120, 103, 1); 
+                z-index: -1;
+            }
             }
         }
-        .offer_el_picture {
-            width: 50%;
-            height: auto;
-            img {
-                width: 100%;
-                height: 100%;
-            }
+    }
+    .offer_el_picture {
+        width: 50%;
+        height: auto;
+        @media (max-width: 999px) {
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .pic_standout {
+        order: 1;
+        @media (max-width: 999px) {
+            order: 0;
         }
     }
 }
 
 .benefits {
     display: flex;
+    width: 100%;
+
+    @media (max-width: 999px) {
+        flex-direction: column;
+    }
 
     .benefits_el {
+        width: 50%;
         position: relative;
+        @media (max-width: 999px) {
+            width: 100%;
+        }
         img {
             width: 100%;
         }
-    }
 
-    .benefits_el_first, .benefits_el_second {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        width: 100%;
-        padding: 0 170px;
-        background-size: contain;
-        position: absolute;
-        z-index: 1;
-        top: 60%;   
-        .benefits_el_header {
-            font-weight: map.get($copy, 'bold');
-            font-family: map.get($copy, 'font-other'), sans-serif;
-            font-size: 2rem;
+        .benefits_el_first, .benefits_el_second {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            padding: 0 50px;
+            position: absolute;
+            z-index: 1;
+            top: 60%;   
+            .benefits_el_header {
+                font-weight: map.get($copy, 'bold');
+                font-family: map.get($copy, 'font-other'), sans-serif;
+                font-size: 2rem;
+                @media (max-width: 999px) {
+                    font-size: 1.5rem;
+                }
+            }
+            .benefits_el_text {
+                text-align: center;
+                font-weight: map.get($copy, 'small');
+                font-family: map.get($copy, 'font-main'), sans-serif;
+                padding: 30px 0 60px 0;
+                line-height: 1.5;
+                width: 95%;
+                max-width: 400px;
+                @media (max-width: 999px) {
+                    font-size: 0.8rem;
+                    padding: 14px 0 60px 0;
+                }
+            }
         }
-        .benefits_el_text {
-            text-align: center;
-            font-weight: map.get($copy, 'small');
-            font-family: map.get($copy, 'font-main'), sans-serif;
-            padding: 30px 0 60px 0;
-            line-height: 1.5;
+        .benefits_el_first {
+            color: hsl(167, 40%, 24%);
         }
-    }
-    .benefits_el_first {
-        color: hsl(167, 40%, 24%);
-    }
-    .benefits_el_second {
-        color: hsl(198, 62%, 26%);
+        .benefits_el_second {
+            color: hsl(198, 62%, 26%);
+        }
     }
 }
 
@@ -220,6 +280,10 @@ body {
 
     padding: 150px 0;
 
+    @media (max-width: 999px) {
+        padding: 50px 0;
+    }
+
     .testimonials_header {
         text-transform: uppercase;
         font-size: 1.5rem;
@@ -228,17 +292,28 @@ body {
         font-weight: map.get($copy, 'bold');
         padding-bottom: 100px;
         color: hsl(210, 4%, 67%);
+        text-align: center;
+        @media (max-width: 999px) {
+            padding-bottom: 50px;
+            font-size: 1.2rem;
+        }
     }
     .container_el {
         display: flex;
         flex-direction: row;
         justify-content: center;
         padding: 0 100px;
+        @media (max-width: 999px) {
+            flex-direction: column;
+            padding: 0 50px;
+        }
         .testimonials_el {
             display: flex;
             flex-direction: column;
             align-items: center;
-
+            @media (max-width: 999px) {
+                padding-bottom: 30px;
+            }
             .testimonials_el_pic {
                 border-radius: 50%;
                 width: 80px;
@@ -273,9 +348,15 @@ body {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
+    @media (max-width: 999px) {
+        flex-wrap: wrap;
+    }
     .gallery_el {
-        width: 25%;
+        max-width: 25%;
         height: auto;
+        @media (max-width: 999px) {
+            max-width: 50%;
+        }
     }
 }
 
